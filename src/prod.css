@@ -1,0 +1,44 @@
+/* src/prod.css - small production-grade refinements (non-destructive) */
+:root{
+  --brand: #2563eb;
+  --brand-600:#2563eb;
+  --brand-700:#1d4ed8;
+  --surface:#0b1220;
+  --card:#0f172a;
+  --muted:#93a4b8;
+  --success:#16a34a;
+  --danger:#ef4444;
+}
+
+html{ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+*{ box-sizing: border-box; }
+
+.app-root{ background: var(--surface); color: #e5edff; min-height: 100vh; }
+.main{ max-width: 1200px; margin: 0 auto; padding: 12px 16px; }
+
+.btn{ cursor: pointer; border: 1px solid transparent; border-radius: 8px; padding: 8px 12px; font-weight: 600; transition: transform .06s ease, background .2s ease, color .2s ease, border-color .2s ease; }
+.btn:hover{ transform: translateY(-1px); }
+.btn:active{ transform: translateY(0); }
+.btn-primary{ background: var(--brand); color: #fff; border-color: var(--brand-600); }
+.btn-primary:hover{ background: var(--brand-700); }
+.btn-ghost{ background: transparent; color: #c9d7f0; border-color: rgba(148,163,184,.25); }
+.btn-small{ padding: 6px 10px; font-size: .9rem; }
+
+.input, .input-small, input[type="text"], input[type="number"], input[type="password"], select{ background: #0b1328; color: #e5edff; border: 1px solid rgba(148,163,184,.25); border-radius: 8px; padding: 8px 10px; outline: none; }
+.input:focus, .input-small:focus, input:focus, select:focus{ border-color: var(--brand-600); box-shadow: 0 0 0 3px rgba(37,99,235,.25); }
+
+.field-error, .form-error{ background: rgba(239,68,68,.12); color: #fecaca; border: 1px solid rgba(239,68,68,.4); border-radius: 8px; padding: 6px 10px; }
+.muted{ color: var(--muted); font-size: .9rem; }
+
+/* POS enhancements */
+.pos-container .payment-card{ background: var(--card); border: 1px solid rgba(148,163,184,.18); border-radius: 12px; padding: 12px; }
+.pos-container .payment-card-head{ display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #dbe6ff; }
+.pos-container .qr-image{ background: #fff; padding: 8px; border-radius: 8px; }
+.pos-container .upi-code-tools{ margin-top: 10px; }
+.pos-container .upi-code-row{ display: flex; gap: 8px; align-items: center; }
+
+/* Login page tweaks */
+.login-page .login-card{ background: var(--card); border: 1px solid rgba(148,163,184,.18); border-radius: 12px; }
+.login-page .login-title{ color: #e9f1ff; }
+.login-page .login-subtitle{ color: var(--muted); }
+.login-page .login-footer{ color: var(--muted); }

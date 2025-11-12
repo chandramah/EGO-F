@@ -1,0 +1,103 @@
+﻿/* dashboard.css - page-specific styling for Dashboard layout and KPI cards */
+
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+  background: #f4f6f8;
+  box-sizing: border-box;
+}
+
+/* Main content area (between left sidebar and right admin panel) */
+.dashboard-main {
+  flex: 1;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top title row */
+.page-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 18px 0;
+}
+
+/* KPI cards row */
+.kpi-cards {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.kpi-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.kpi-title {
+  font-size: 13px;
+  color: #6b7280;
+  letter-spacing: 0.02em;
+}
+.kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0b63b7; /* blue */
+  margin-top: 8px;
+}
+
+/* table card */
+.table-card {
+  margin-top: 16px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+ 
+}
+
+/* Low stock table specifics */
+.table-wrap { overflow-x: auto; }
+.dash-table { width:100%; border-collapse: collapse; }
+.dash-table th, .dash-table td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #f1f5f8;
+  font-size: 14px;
+  color: #0f172a;
+}
+.dash-table thead th {
+  font-size: 12px;
+  color: #e7eefb;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background-color: #2563eb;
+}
+.qty-cell { text-align: right; font-weight: 700; }
+
+/* Layout when admin panel present on the right */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px; /* main content + right admin panel */
+  gap: 20px;
+}
+
+/* Make sure main content scrolls while header and admin panel stick */
+.dashboard-content {
+  overflow: auto;
+  min-height: calc(100vh - 100px);
+  padding-right: 6px;
+}
+
+/* Responsive: stack admin panel under content */
+@media (max-width: 1000px) {
+  .dashboard-layout { grid-template-columns: 1fr; }
+  .kpi-cards { flex-direction: column; }
+}
+
+/* subtle helpers */
+.section-title { font-size: 16px; margin: 0 0 12px 0; color:#0f172a; }
